@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../my-element/my-element.html">
+<link rel="import" href="../bdr-item/bdr-item.html">
+<link rel="import" href="../bdr-thumbnail/bdr-thumbnail.html">
+<link rel="import" href="../bdr-search/bdr-search.html">
+<link rel="import" href="../bdr-results/bdr-results.html">
+
+
+
+<dom-module id="firstapp-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+    <my-element></my-element>
+     <bdr-item pid="bdr:123"></bdr-item>
+   <bdr-thumbnail pid="bdr:229022"></bdr-thumbnail>
+   <bdr-search query="monkey" rows="45" docs={{documents}}></bdr-search>
+   <bdr-results docs=[[documents]]></bdr-results>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'firstapp-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'firstapp-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

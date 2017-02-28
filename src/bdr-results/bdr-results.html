@@ -1,0 +1,37 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/vaadin-grid/vaadin-grid.html">
+
+
+<dom-module id="bdr-results">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+         <h1>Grid</h1> 
+         <vaadin-grid items=[[docs]] selection-mode="multi" id="grid-objects-source">
+  <table>
+    <colgroup>
+      <col name="primary_title">
+      <col name="pid">
+    </colgroup>
+  </table>
+</vaadin-grid>
+          <div> Results list: </div>
+            <template is="dom-repeat" items="{{docs}}">
+                <div>Title<span>[[item.primary_title]]<span></div>
+                <div>Thumbnail: <bdr-thumbnail pid=[[item.pid]]></bdr-thumbnail></div>
+            </template> 
+            
+    </template>
+    <script>
+        Polymer({
+            is: 'bdr-results',
+            properties: {
+                docs: { type: Array, value: function () { return []; }, notify: true }
+            }
+        });
+    </script>
+</dom-module>

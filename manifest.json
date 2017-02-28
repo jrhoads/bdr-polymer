@@ -1,0 +1,6 @@
+{
+  "name": "firstapp",
+  "short_name": "firstapp",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,47 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="bdr-thumbnail">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <iron-image src="{{url}}"></iron-image>
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'bdr-thumbnail',
+
+      properties: {
+        foo: {
+          type: String,
+          value: 'bdr-thumbnail',
+          notify: true
+        },
+        thumbnail_base: {
+          type: String,
+          value: 'https://repository.library.brown.edu/viewers/image/thumbnail',
+          notify: true
+        },
+        pid: {
+          type: String,
+          value: '',
+          notify: true
+        },
+        url: {
+          type: String,
+	  computed: '_thumbnail_url(thumbnail_base, pid)'
+        }
+      },
+      _thumbnail_url: function(api_base, pid) {
+                   return [api_base, pid].join('/');
+                 },
+    });
+  })();
+  </script>
+</dom-module>
