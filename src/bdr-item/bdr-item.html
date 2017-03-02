@@ -18,9 +18,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
     </style>
-    <div>
-      <h3>BDR item with PID = {{pid}} </h3>
-      <p>URL: {{url}}</p>
       <byutv-jsonp
          auto
          debounce-duration="300"
@@ -29,7 +26,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
          last-response={{itemdata}}
          onResponse=setItemProps></byutv-jsonp>
 
-    </div>
   </template>
   <script>
   (function() {

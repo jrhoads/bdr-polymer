@@ -1,0 +1,44 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+
+<dom-module id="bdr-card">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+            .item {
+                border-bottom: 1px solid #eee;
+            }
+            .card-content {
+                @apply(--layout-flex);
+                float:left;
+            }
+            paper-card{
+                @apply(--layout-horizontal);
+                margin:20px auto;
+                max-width: 600px;
+            }
+        </style>
+        <paper-card>
+            <bdr-thumbnail pid=[[item.pid]]></bdr-thumbnail>
+            <div class="card-content item">
+                <div>[[item.primary_title]]</div>
+            </div>
+          </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: 'bdr-card',
+            properties: {
+                item: {
+                    type: Object,
+                    value: function(){return {primary_title:"false card"};},
+                    notify: true
+                }
+            }
+        });
+    </script>
+</dom-module>

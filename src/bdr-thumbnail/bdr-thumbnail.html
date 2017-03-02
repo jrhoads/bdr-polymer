@@ -7,8 +7,12 @@
       :host {
         display: block;
       }
+      iron-image{
+          width:150px;
+          height:150px;
+      }
     </style>
-    <iron-image src="{{url}}"></iron-image>
+    <iron-image sizing="contain" src="{{url}}" ></iron-image>
   </template>
   <script>
   (function() {
