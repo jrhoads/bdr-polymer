@@ -5,6 +5,10 @@
 <link rel="import" href="../bdr-search/bdr-search.html">
 <link rel="import" href="../bdr-results/bdr-results.html">
 
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+
+
 
 
 <dom-module id="firstapp-app">
@@ -14,9 +18,11 @@
         display: block;
       }
     </style>
-     <bdr-item pid="bdr:123"></bdr-item>
-   <bdr-thumbnail pid="bdr:229022"></bdr-thumbnail>
-   <bdr-search query="monkey" rows="45" docs={{documents}}></bdr-search>
+   
+   <app-location query-params={{qp}}></app-location>
+   <paper-input label="Search" value={{qp.q}}></paper-input>
+   
+   <bdr-search query=[[qp.q]] rows="45" docs={{documents}}></bdr-search>
    <bdr-results docs=[[documents]]></bdr-results>
 
   </template>
@@ -32,6 +38,14 @@
           value: 'firstapp-app',
         },
       },
+      ready: function() {
+        this.async(function() {
+          // If the path is blank, redirect to /
+          if (!this.qp) {
+            this.set('qp', {q:""});
+          }
+        });
+      }
 
     });
   </script>

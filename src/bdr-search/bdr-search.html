@@ -19,8 +19,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     <div>
-      <h3>Search the bdr with query: {{query}}</h3>
-      <p>URL: {{url}}</p>
       <byutv-jsonp
          auto
          debounce-duration="300"
@@ -73,12 +71,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
         reportError: function(e){
           console.log("Error retrieving item");
+          this.set(searchdata, {})
         },      
         _docs: function(itemdata){
                    if ('response' in itemdata
 		      && 'docs' in itemdata.response) {
-
-		     console.log(itemdata.response.docs);
                      return itemdata.response.docs;
                    } else {
                      return [];

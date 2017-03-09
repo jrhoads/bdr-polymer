@@ -6,8 +6,9 @@
     "byutv-jsonp": "^1.3.0",
     "iron-image": "^1.2.5",
     "vaadin-grid": "^1.2.1",
-    "paper-card": "^0.1.5",
-    "iron-list": "^1.4.2"
+   "iron-list": "^1.4.2",
+    "paper-input": "PolymerElements/paper-input#^1.1.23",
+    "app-route": "PolymerElements/app-route#^0.9.3"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
@@ -16,7 +17,7 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   },
   "resolutions": {
-    "paper-ripple": "master",
-    "font-roboto": "master"
+    "font-roboto": "master",
+    "polymer": "^1.4.0"
   }
 }
